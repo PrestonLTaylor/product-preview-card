@@ -1,0 +1,161 @@
+:root {
+  --main-clr: hsl(212, 21%, 14%);
+  --accent-clr: hsl(158, 36%, 37%);
+  --muted-clr: hsl(228, 12%, 48%);
+
+  --main-bg-clr: hsl(30, 38%, 92%);
+  --accent-bg-clr: hsl(0, 0%, 100%);
+
+  --main-ff: "Montserrat", sans-serif;
+  --accent-ff: "Fraunces", serif;
+
+  --main-fs: 0.875rem;
+  --accent-fs: 2rem;
+  --muted-fs: 0.75rem;
+
+  --main-fw: 500;
+  --accent-fw: 700;
+}
+
+/* Relevant CSS reset */
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+}
+
+img,
+picture {
+  max-width: 100%;
+
+  display: block;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  /* Vertically centers card */
+  display: flex;
+  justify-content: center;
+
+  background-color: var(--main-bg-clr);
+
+  font-family: var(--main-ff);
+  font-size: var(--main-fs);
+  font-weight: var(--main-fw);
+
+  line-height: 175%;
+}
+
+.product-card {
+  max-width: 21.3125rem;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: auto;
+
+  background-color: var(--accent-bg-clr);
+
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+
+.product-content {
+  padding: 1.5rem;
+
+  display: grid;
+  gap: 1rem;
+}
+
+.product-type {
+  color: var(--muted-clr);
+
+  font-size: var(--muted-fs);
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+}
+
+.product-title {
+  font-family: var(--accent-ff);
+  font-weight: var(--accent-fw);
+  font-size: var(--accent-fs);
+  line-height: 100%;
+}
+
+@media (min-width: 600px) {
+  .product-card {
+    max-width: 37.5rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product-content {
+    padding: 2rem;
+  }
+
+  .product-title {
+    font-size: 2.25rem;
+  }
+}
+
+.product-description {
+  color: var(--muted-clr);
+}
+
+.product-price {
+  display: flex;
+  margin: 0.5rem 0;
+}
+
+.sale-price {
+  color: var(--accent-clr);
+
+  font-family: var(--accent-ff);
+  font-size: var(--accent-fs);
+  font-weight: var(--accent-fw);
+
+  padding-right: 1rem;
+}
+
+.normal-price {
+  height: 100%;
+
+  color: var(--muted-clr);
+  text-decoration: line-through;
+}
+
+.cart-button {
+  display: block;
+  width: 100%;
+
+  color: var(--accent-bg-clr);
+  background-color: var(--accent-clr);
+
+  border: none;
+  border-radius: 0.375rem;
+
+  font-family: inherit;
+  font-weight: var(--accent-fw);
+
+  text-align: center;
+}
+
+.cart-text::before {
+  content: url(./images/icon-cart.svg);
+  padding-right: 0.75rem;
+}
+
+.cart-button:hover,
+.cart-button:focus-visible {
+  background-color: hsl(158, 36%, 25%);
+  cursor: pointer;
+}
+
+.cart-text {
+  padding: 0.75rem;
+}
